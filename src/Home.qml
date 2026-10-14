@@ -376,9 +376,9 @@ HomeForm {
             Rectangle {
                 width: id1.width - 2 * settings.ui_zoom / 100
                 height: 123 * settings.ui_zoom / 100
-                radius: 3
+                radius: 14
                 border.width: 1
-                border.color: (settings.theme_tile_shadow_enabled ? settings.theme_tile_shadow_color : settings.theme_tile_background_color)
+                border.color: (settings.theme_tile_shadow_enabled ? settings.theme_tile_shadow_color : "#2A2F38")
                 color: settings.theme_tile_background_color
                 id: rect
 
@@ -428,7 +428,7 @@ HomeForm {
                 }
                 text: value
                 horizontalAlignment: Text.AlignHCenter
-                width: Math.max(50, parent.width - (writable ? 100 * settings.ui_zoom / 100 : 12 * settings.ui_zoom / 100))
+                width: Math.max(50, parent.width - (writable ? 124 * settings.ui_zoom / 100 : 12 * settings.ui_zoom / 100))
                 height: 58 * settings.ui_zoom / 100
                 font.pointSize: valueFontSize * settings.ui_zoom / 100
                 fontSizeMode: Text.Fit
@@ -442,7 +442,7 @@ HomeForm {
             Text {
                 objectName: "secondLine"
                 id: secondLineText
-                color: "white"
+                color: "#767C88"
                 y: myValue.bottom
                 anchors {
                     top: myValue.bottom
@@ -470,9 +470,11 @@ HomeForm {
                 }
                 font.bold: true
                 font.pointSize: labelFontSize
+                font.capitalization: Font.AllUppercase
+                font.letterSpacing: 0.6
                 fontSizeMode: Text.Fit
                 minimumPointSize: 8
-                color: "white"
+                color: "#9AA0AB"
                 text: name
                 horizontalAlignment: settings.theme_tile_icon_enabled ? Text.AlignLeft : Text.AlignHCenter
                 anchors.leftMargin: settings.theme_tile_icon_enabled ? 55 * settings.ui_zoom / 100 : 0
@@ -493,8 +495,8 @@ HomeForm {
                 anchors.top: myValue.top
                 anchors.left: parent.left
                 anchors.leftMargin: 2
-                width: 48 * settings.ui_zoom / 100
-                height: 48 * settings.ui_zoom / 100
+                width: 56 * settings.ui_zoom / 100
+                height: 56 * settings.ui_zoom / 100
 
                 // VoiceOver accessibility
                 Accessible.role: Accessible.Button
@@ -512,8 +514,8 @@ HomeForm {
                 anchors.top: myValue.top
                 anchors.right: parent.right
                 anchors.rightMargin: 2
-                width: 48 * settings.ui_zoom / 100
-                height: 48 * settings.ui_zoom / 100
+                width: 56 * settings.ui_zoom / 100
+                height: 56 * settings.ui_zoom / 100
 
                 // VoiceOver accessibility
                 Accessible.role: Accessible.Button
@@ -560,7 +562,7 @@ HomeForm {
             id: dragHandle
             width: parent.width / 5
             height: 10
-            color: "#9C27B0"
+            color: "#30D5C8"
             anchors.top: parent.top
             anchors.horizontalCenter: parent.horizontalCenter
             visible: rootItem.chartFooterVisible || rootItem.videoVisible
